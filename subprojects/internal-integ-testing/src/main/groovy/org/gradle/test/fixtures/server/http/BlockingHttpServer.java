@@ -112,10 +112,10 @@ public class BlockingHttpServer extends ExternalResource {
         String streamVar = "inputStream" + count;
         StringWriter result = new StringWriter();
         PrintWriter writer = new PrintWriter(result);
-        writer.print("java.net.URL " + urlVar + " = new java.net.URL(" + uriExpression + ");");
+        writer.print("String " + urlVar + " = " + uriExpression + ";");
         writer.print("System.out.println(\"[G] calling \" + " + urlVar + ");");
         writer.print("try {");
-        writer.print("  java.net.URLConnection " + connectionVar + " = " + urlVar + ".openConnection();");
+        writer.print("  java.net.URLConnection " + connectionVar + " = new java.net.URL(" + urlVar + ").openConnection();");
         writer.print("  " + connectionVar + ".setReadTimeout(0);"); // to avoid silent retry
         writer.print("  " + connectionVar + ".connect();");
         writer.print("  java.io.InputStream " + streamVar + " = " + connectionVar + ".getInputStream();");
