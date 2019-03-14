@@ -18,6 +18,7 @@ package org.gradle.tooling.internal.adapter;
 import com.google.common.base.Optional;
 import org.gradle.internal.UncheckedException;
 import org.gradle.internal.reflect.DirectInstantiator;
+import org.gradle.internal.reflect.TypeInspector;
 import org.gradle.internal.time.CountdownTimer;
 import org.gradle.internal.time.Time;
 import org.gradle.internal.typeconversion.EnumFromCharSequenceNotationParser;
