@@ -17,7 +17,7 @@
 package org.gradle.internal.execution.history.changes;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableListMultimap;
+import com.google.common.collect.ImmutableMultimap;
 
 /**
  * Represents the complete changes in execution state
@@ -29,5 +29,5 @@ public interface ExecutionStateChanges {
      */
     ImmutableList<String> getAllChangeMessages();
 
-    InputChangesInternal getInputChanges(ImmutableListMultimap<Object, String> incrementalInputs);
+    InputChangesInternal createInputChanges(ImmutableMultimap<Object, String> incrementalParameterNameByValue);
 }
